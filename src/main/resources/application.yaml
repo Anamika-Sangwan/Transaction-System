@@ -1,3 +1,24 @@
 spring:
   application:
-    name: TransactionSystem
+    name: transaction-system
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/transaction_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # creates/updates tables automatically
+    show-sql: true       # logs SQL queries
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8080
